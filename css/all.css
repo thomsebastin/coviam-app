@@ -40,6 +40,7 @@ h4 {
   width: 300px;
   background: #DEB887;
   margin: 6px;
+  padding: 16px;
 }
 
 .cv-item {
@@ -72,3 +73,33 @@ h4 {
   display: table;
   margin: 0 auto;
 }
+
+.clearfix:after {
+  content: " ";
+  /* Older browser do not support empty content */
+  visibility: hidden;
+  display: block;
+  height: 0;
+  clear: both;
+}
+
+.cart-data li {
+  float: left;
+  width: 50%;
+}
+
+.cart-header li {
+  float: left;
+  width: 25%;
+}
+
+.cart-selection li {
+  float: left;
+  width: 25%;
+}
+
+.cart-summary {
+  margin: 6px 0px;
+}
+
+
