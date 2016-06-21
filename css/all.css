@@ -30,3 +30,11 @@ h4 {
   padding: 12px;
   margin: 6px;
 }
+.cv-cart {
+  position: fixed;
+  height: 500px;
+  border: 1px solid #000;
+  width: 300px;
+  background: #DEB887;
+  margin: 6px;
+}
