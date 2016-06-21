@@ -1,3 +1,6 @@
+* {
+  box-sizing: border-box;
+}
 h4 {
   font-weight: bold;
   margin: 4px 0px;
@@ -15,4 +18,15 @@ h4 {
 .summary {
   width: 25%;
   float: left;
+}
+
+.lists li {
+  float: left;
+  padding: 0px 4px;
+  background: #808080;
+  height: 300px;
+  float: left;
+  width: 225px;
+  padding: 12px;
+  margin: 6px;
 }
