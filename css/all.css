@@ -1,0 +1,18 @@
+h4 {
+  font-weight: bold;
+  margin: 4px 0px;
+}
+
+.container {
+  padding: 24px;
+}
+
+.listing {
+  width: 75%;
+  float: left;
+}
+
+.summary {
+  width: 25%;
+  float: left;
+}
