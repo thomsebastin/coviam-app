@@ -23,12 +23,14 @@ h4 {
 .lists li {
   float: left;
   padding: 0px 4px;
-  background: #808080;
   min-height: 256px;
   float: left;
   width: 225px;
   padding: 12px;
   margin: 6px;
+  -webkit-box-shadow: 3px 5px 11px 1px rgba(0,0,0,0.5);
+  -moz-box-shadow: 3px 5px 11px 1px rgba(0,0,0,0.5);
+  box-shadow: 3px 5px 11px 1px rgba(0,0,0,0.5);
 }
 
 .cv-cart {
