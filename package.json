@@ -1,0 +1,29 @@
+{
+  "name": "coviam-app",
+  "version": "1.0.0",
+  "description": "A small e-commerce page using Angular.js",
+  "main": "app.js",
+  "dependencies": {
+    "bower": "^1.7.9"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/thomsebastin/coviam-app.git"
+  },
+  "keywords": [
+    "angular",
+    "javascript",
+    "spa",
+    "interview"
+  ],
+  "author": "Thomas Sebastian (thomas.jsm13@gmail.com)",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/thomsebastin/coviam-app/issues"
+  },
+  "homepage": "https://github.com/thomsebastin/coviam-app#readme"
+}
