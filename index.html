@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="cvApp" ng-controller="cvCtrl">
+   	<head>
+      <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+      <meta name="msapplication-tap-highlight" content="no" />
+      <meta name="apple-mobile-web-app-capable" content="yes">
+      <meta name="apple-mobile-web-app-status-bar-style" content="#e51a38">
+      <title>Coviam</title>
+      <link rel="apple-touch-icon" href="img/favicon.png">
+      <!--<link rel="shortcut icon" type="image/ico" href="img/favicon.png">-->
+      <style>
+           [ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak {
+              display: none !important;
+           }
+      </style>
+      <link href="css/all.css" rel="stylesheet">
+    </head>
+
+    <body>
+      <!--View injection-->
+      <div ui-view></div>
+
+      <!--Dependencies-->
+      <script src="bower_components/angular/angular.min.js"></script>
+      <script src="bower_components/angular-ui-router/release/angular-ui-router.min.js"></script>
+
+      <!--user scripts-->
+      <script src="modules/app.js"></script>
+      <script src="modules/controller.js"></script>
+    </body>
+</html>
