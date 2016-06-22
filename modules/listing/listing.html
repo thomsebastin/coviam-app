@@ -9,7 +9,12 @@
         <p class="cv-name">Item name</p>
         <p class="cv-detail">Packing detail</p>
         <p class="cv-amount">Rs 500</p>
-        <button class="cv-btn">Add to cart</button>
+        <button ng-click="hideCartBtn()" ng-hide="isHidden" class="cv-btn">Add to cart</button>
+        <div class="cv-sel-section cv-center" ng-show="isShown">
+          <button>-</button>
+          <button>1 in cart</button>
+          <button>+</button>
+        </div>
       </li>
       <li>one</li>
       <li>one</li>

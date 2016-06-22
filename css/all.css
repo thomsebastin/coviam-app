@@ -35,12 +35,13 @@ h4 {
 
 .cv-cart {
   position: fixed;
-  height: 500px;
-  border: 1px solid #000;
+  min-height: 200px;
   width: 300px;
-  background: #DEB887;
   margin: 6px;
   padding: 16px;
+  -webkit-box-shadow: 3px 5px 11px 1px rgba(0,0,0,0.5);
+  -moz-box-shadow: 3px 5px 11px 1px rgba(0,0,0,0.5);
+  box-shadow: 3px 5px 11px 1px rgba(0,0,0,0.5);
 }
 
 .cv-item {
@@ -102,4 +103,11 @@ h4 {
   margin: 6px 0px;
 }
 
+.cv-center {
+  display: table;
+  margin: 0 auto;
+}
 
+.cv-sel-section {
+  /*display: none;*/
+}
