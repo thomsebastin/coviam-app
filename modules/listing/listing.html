@@ -4,7 +4,7 @@
   <div class="listing">
     <ul class="lists">
       <li ng-repeat="product in allProducts">
-        <div class="cv-item"></div>
+        <div class="cv-item" ng-style="{'background-image':'url(images/'+product.prod_img+')'}"></div>
         <p class="cv-brand" ng-bind="product.brand_name">Brand name</p>
         <p class="cv-name" ng-bind="product.prod_name">Item name</p>
         <p class="cv-detail" ng-bind="product.package_detail">Packing detail</p>

@@ -1,6 +1,6 @@
 [
   {
-    "prod_img": "someurl",
+    "prod_img": "code.png",
     "prod_id": "01",
     "brand_name": "Puma",
     "prod_name": "t-shirt",
@@ -8,7 +8,7 @@
     "price": 200
   },
   {
-    "prod_img": "someurl",
+    "prod_img": "code.png",
     "prod_id": "02",
     "brand_name": "Nike",
     "prod_name": "t-shirt",
@@ -16,7 +16,7 @@
     "price": 2200
   },
   {
-    "prod_img": "someurl",
+    "prod_img": "try.png",
     "prod_id": "03",
     "brand_name": "Adidas",
     "prod_name": "t-shirt",
@@ -24,7 +24,7 @@
     "price": 1200
   },
   {
-    "prod_img": "someurl",
+    "prod_img": "code.png",
     "prod_id": "04",
     "brand_name": "Reebok",
     "prod_name": "shoes",
@@ -32,7 +32,7 @@
     "price": 2004
   },
   {
-    "prod_img": "someurl",
+    "prod_img": "try.png",
     "prod_id": "05",
     "brand_name": "lee-cooper",
     "prod_name": "shoes",
@@ -40,7 +40,7 @@
     "price": 3200
   },
   {
-    "prod_img": "someurl",
+    "prod_img": "code.png",
     "prod_id": "06",
     "brand_name": "puma",
     "prod_name": "t-shirt",
@@ -48,7 +48,7 @@
     "price": 200
   },
   {
-    "prod_img": "someurl",
+    "prod_img": "try.png",
     "prod_id": "07",
     "brand_name": "Woodland",
     "prod_name": "boots",
@@ -56,7 +56,7 @@
     "price": 4200
   },
   {
-    "prod_img": "someurl",
+    "prod_img": "code.png",
     "prod_id": "01",
     "brand_name": "Puma",
     "prod_name": "t-shirt",
@@ -64,7 +64,7 @@
     "price": 200
   },
   {
-    "prod_img": "someurl",
+    "prod_img": "try.png",
     "prod_id": "02",
     "brand_name": "Nike",
     "prod_name": "t-shirt",
@@ -72,7 +72,7 @@
     "price": 2200
   },
   {
-    "prod_img": "someurl",
+    "prod_img": "code.png",
     "prod_id": "03",
     "brand_name": "Adidas",
     "prod_name": "t-shirt",
