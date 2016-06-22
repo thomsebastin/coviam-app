@@ -70,7 +70,6 @@ cvController.controller('cvCtrl', function($scope, GlobalService) {
 
   // remove the cart item
   $scope.removeCartItem = function(obj) {
-    console.log(obj);
     $scope.allGoods = ($scope.allGoods).filter(function(item) { return item.name !== obj.name; });
   };
 
