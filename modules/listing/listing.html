@@ -1,48 +1,48 @@
 <div class="container">
-  <h4>Masalas & Spices <span>(64 items)</span></h4>
+  <h4>Masalas & Spices <span ng-bind="'(' + allProducts.length + ' items)'">(64 items)</span></h4>
   <!--items listing section-->
   <div class="listing">
     <ul class="lists">
-      <li>
+      <li ng-repeat="product in allProducts">
         <div class="cv-item"></div>
-        <p class="cv-brand">Brand name</p>
-        <p class="cv-name">Item name</p>
-        <p class="cv-detail">Packing detail</p>
-        <p class="cv-amount">Rs 500</p>
-        <button ng-click="isHidden = !isHidden" ng-show="isHidden" class="cv-btn">Add to cart</button>
-        <div class="cv-sel-section cv-center" ng-hide="isHidden">
+        <p class="cv-brand" ng-bind="product.brand_name">Brand name</p>
+        <p class="cv-name" ng-bind="product.prod_name">Item name</p>
+        <p class="cv-detail" ng-bind="product.package_detail">Packing detail</p>
+        <p class="cv-amount" ng-bind="'Rs ' + product.price">Rs 500</p>
+        <button id="product.prod_id" ng-click="addToCart(product)" ng-hide="product.isHidden" class="cv-btn">Add to cart</button>
+        <div class="cv-sel-section cv-center" ng-show="product.isHidden">
           <button>-</button>
           <button>1 in cart</button>
           <button>+</button>
         </div>
       </li>
-      <li>
-        <div class="cv-item"></div>
-        <p class="cv-brand">Brand name</p>
-        <p class="cv-name">Item name</p>
-        <p class="cv-detail">Packing detail</p>
-        <p class="cv-amount">Rs 500</p>
-        <button ng-click="isHidden = !isHidden" ng-show="isHidden" class="cv-btn">Add to cart</button>
-        <div class="cv-sel-section cv-center" ng-hide="isHidden">
-          <button>-</button>
-          <button>1 in cart</button>
-          <button>+</button>
-        </div>
-      </li>
-      <li>one</li>
-      <li>one</li>
-      <li>true</li>
-      <li>web</li>
-      <li>dev</li>
-      <li>really</li>
-      <li>true</li>
-      <li>web</li>
-      <li>dev</li>
-      <li>really</li>
-      <li>true</li>
-      <li>web</li>
-      <li>dev</li>
-      <li>really</li>
+      <!--<li>-->
+        <!--<div class="cv-item"></div>-->
+        <!--<p class="cv-brand">Brand name</p>-->
+        <!--<p class="cv-name">Item name</p>-->
+        <!--<p class="cv-detail">Packing detail</p>-->
+        <!--<p class="cv-amount">Rs 500</p>-->
+        <!--<button ng-click="isHidden = !isHidden" ng-show="isHidden" class="cv-btn">Add to cart</button>-->
+        <!--<div class="cv-sel-section cv-center" ng-hide="isHidden">-->
+          <!--<button>-</button>-->
+          <!--<button>1 in cart</button>-->
+          <!--<button>+</button>-->
+        <!--</div>-->
+      <!--</li>-->
+      <!--<li>one</li>-->
+      <!--<li>one</li>-->
+      <!--<li>true</li>-->
+      <!--<li>web</li>-->
+      <!--<li>dev</li>-->
+      <!--<li>really</li>-->
+      <!--<li>true</li>-->
+      <!--<li>web</li>-->
+      <!--<li>dev</li>-->
+      <!--<li>really</li>-->
+      <!--<li>true</li>-->
+      <!--<li>web</li>-->
+      <!--<li>dev</li>-->
+      <!--<li>really</li>-->
     </ul>
   </div>
   <div class="summary">
@@ -51,11 +51,11 @@
       <ul class="cart-data">
         <li>
           <p>Items in cart</p>
-          <p>2</p>
+          <p>0</p>
         </li>
         <li>
           <p>Total Rs</p>
-          <p>250</p>
+          <p>0</p>
         </li>
       </ul>
       <div class="clearfix"></div>
