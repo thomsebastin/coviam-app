@@ -1,7 +1,7 @@
 var cvApp = angular.module('cvApp', [
   'cvApp.controller', 
-  //'cvApp.directive', 
-  //'cvApp.service',
+  'cvApp.directive', 
+  'cvApp.service',
   'ui.router'
 ]);
 

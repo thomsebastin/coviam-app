@@ -9,8 +9,21 @@
         <p class="cv-name">Item name</p>
         <p class="cv-detail">Packing detail</p>
         <p class="cv-amount">Rs 500</p>
-        <button ng-click="hideCartBtn()" ng-hide="isHidden" class="cv-btn">Add to cart</button>
-        <div class="cv-sel-section cv-center" ng-show="isShown">
+        <button ng-click="isHidden = !isHidden" ng-show="isHidden" class="cv-btn">Add to cart</button>
+        <div class="cv-sel-section cv-center" ng-hide="isHidden">
+          <button>-</button>
+          <button>1 in cart</button>
+          <button>+</button>
+        </div>
+      </li>
+      <li>
+        <div class="cv-item"></div>
+        <p class="cv-brand">Brand name</p>
+        <p class="cv-name">Item name</p>
+        <p class="cv-detail">Packing detail</p>
+        <p class="cv-amount">Rs 500</p>
+        <button ng-click="isHidden = !isHidden" ng-show="isHidden" class="cv-btn">Add to cart</button>
+        <div class="cv-sel-section cv-center" ng-hide="isHidden">
           <button>-</button>
           <button>1 in cart</button>
           <button>+</button>
