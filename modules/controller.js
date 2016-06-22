@@ -68,5 +68,12 @@ cvController.controller('cvCtrl', function($scope, GlobalService) {
     return total;
   };
 
+  // remove the cart item
+  $scope.removeCartItem = function(obj) {
+    console.log(obj);
+    $scope.allGoods = ($scope.allGoods).filter(function(item) { return item.name !== obj.name; });
+    $scope.finalHide = false;
+  };
+
   $scope.getProductDetails();
 });
