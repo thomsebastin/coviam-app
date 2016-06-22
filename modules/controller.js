@@ -1,11 +1,17 @@
 var cvController = angular.module('cvApp.controller', []);
 
-cvController.controller('cvCtrl', function($scope, GlobalService) {
+cvController.controller('cvCtrl', function($scope, GlobalService, $localStorage) {
   console.log("Controller inititated!!");
   
-  $scope.itemsInCart = 0;
-  $scope.allGoods = [];
-  $scope.grandSum = 0;
+  // setting persistant value
+  if (!$localStorage.cartObj) {
+    $localStorage.cartObj = {};
+  }
+  console.log($localStorage.cartObj)
+  
+  $scope.itemsInCart = ($localStorage.cartObj.itemsInCart) ? $localStorage.cartObj.itemsInCart : 0;
+  $scope.allGoods = ($localStorage.cartObj.allGoods) ? $localStorage.cartObj.allGoods : [];
+  $scope.grandSum = ($localStorage.cartObj.grandSum) ? $localStorage.cartObj.grandSum : 0;
 
   // calling API for getting products
   $scope.getProductDetails = function() {
@@ -26,7 +32,10 @@ cvController.controller('cvCtrl', function($scope, GlobalService) {
       quantity: product.totalSelectedItems,
       total_amt: product.totalSelectedItems * product.price
     }); 
-    $scope.grandSum = $scope.grandTotal();
+    $scope.grandSum = ($localStorage.cartObj.grandSum) ? $localStorage.cartObj.grandSum : $scope.grandTotal();
+    $localStorage.cartObj.grandSum = $scope.grandSum;
+    $localStorage.cartObj.itemsInCart = $scope.itemsInCart;
+    $localStorage.cartObj.allGoods = $scope.allGoods;
   };
 
   // add one more item to the total items on clicking plus
@@ -38,6 +47,9 @@ cvController.controller('cvCtrl', function($scope, GlobalService) {
     found[0].quantity += 1;
     found[0].total_amt = found[0].quantity * product.price;
     $scope.grandSum = $scope.grandTotal();
+    $localStorage.cartObj.grandSum = $scope.grandSum;
+    $localStorage.cartObj.itemsInCart = $scope.itemsInCart;
+    $localStorage.cartObj.allGoods = $scope.allGoods;
   };
 
   // remove one item from cart on clicking '-'
@@ -50,11 +62,15 @@ cvController.controller('cvCtrl', function($scope, GlobalService) {
       found[0].quantity -= 1;
       found[0].total_amt = found[0].quantity * product.price;
       $scope.grandSum = $scope.grandTotal();
+      $localStorage.cartObj.grandSum = $scope.grandSum;
+      $localStorage.cartObj.itemsInCart = $scope.itemsInCart;
+      $localStorage.cartObj.allGoods = $scope.allGoods;
     }
      
     if (product.totalSelectedItems === 0) {
       product.isHidden = false;
       $scope.allGoods = ($scope.allGoods).filter(function(item) { return item.name !== product.brand_name; });
+      $localStorage.cartObj.allGoods = $scope.allGoods;
     }
   };
 
@@ -71,6 +87,7 @@ cvController.controller('cvCtrl', function($scope, GlobalService) {
   // remove the cart item
   $scope.removeCartItem = function(obj) {
     $scope.allGoods = ($scope.allGoods).filter(function(item) { return item.name !== obj.name; });
+    $localStorage.cartObj.allGoods = $scope.allGoods;
   };
 
   $scope.getProductDetails();
