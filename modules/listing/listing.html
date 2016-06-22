@@ -11,9 +11,9 @@
         <p class="cv-amount" ng-bind="'Rs ' + product.price">Rs 500</p>
         <button id="product.prod_id" ng-click="addToCart(product)" ng-hide="product.isHidden" class="cv-btn">Add to cart</button>
         <div class="cv-sel-section cv-center" ng-show="product.isHidden">
-          <button>-</button>
+          <button ng-click="removeAnItem(product)">-</button>
           <button>1 in cart</button>
-          <button>+</button>
+          <button ng-click="addOneMoreItem()">+</button>
         </div>
       </li>
       <!--<li>-->
@@ -51,7 +51,7 @@
       <ul class="cart-data">
         <li>
           <p>Items in cart</p>
-          <p>0</p>
+          <p ng-bind="itemsInCart">0</p>
         </li>
         <li>
           <p>Total Rs</p>
