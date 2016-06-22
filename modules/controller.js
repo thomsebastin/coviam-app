@@ -17,20 +17,23 @@ cvController.controller('cvCtrl', function($scope, GlobalService) {
   $scope.addToCart = function(product) {
     product.isHidden = true;
     $scope.itemsInCart += 1;
+    product.totalSelectedItems += 1;
   };
 
   // add one more item to the total items on clicking plus
-  $scope.addOneMoreItem = function() {
+  $scope.addOneMoreItem = function(product) {
     $scope.itemsInCart += 1;
+    product.totalSelectedItems += 1;
   };
 
   // remove one item from cart on clicking '-'
   $scope.removeAnItem = function(product) {
     if ($scope.itemsInCart > 0) {
       $scope.itemsInCart -= 1;
+      (product.totalSelectedItems > 0) ? (product.totalSelectedItems -= 1) : product.totalSelectedItems;
     }
      
-    if ($scope.itemsInCart === 0) {
+    if (product.totalSelectedItems === 0) {
       product.isHidden = false;
     }
   };

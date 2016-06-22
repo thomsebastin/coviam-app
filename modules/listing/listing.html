@@ -12,8 +12,8 @@
         <button id="product.prod_id" ng-click="addToCart(product)" ng-hide="product.isHidden" class="cv-btn">Add to cart</button>
         <div class="cv-sel-section cv-center" ng-show="product.isHidden">
           <button ng-click="removeAnItem(product)">-</button>
-          <button>1 in cart</button>
-          <button ng-click="addOneMoreItem()">+</button>
+          <button ng-init="product.totalSelectedItems = 0" ng-bind="product.totalSelectedItems + ' in cart'">1 in cart</button>
+          <button ng-click="addOneMoreItem(product)">+</button>
         </div>
       </li>
       <!--<li>-->
