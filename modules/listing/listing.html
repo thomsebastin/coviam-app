@@ -43,8 +43,8 @@
       <div class="cart-grp" ng-repeat="goods in allGoods">
         <ul class="cart-selection">
           <li ng-bind="goods.name">Dummy item</li>
-          <li ng-bind="goods.quantity">1232</li>
-          <li ng-bind="goods.total_amt">234</li>
+          <li class="text-center" ng-bind="goods.quantity">1232</li>
+          <li class="text-center "ng-bind="goods.total_amt">234</li>
           <button ng-click="removeCartItem(goods)">Remove</button>
         </ul>
         <div class="clearfix"></div>

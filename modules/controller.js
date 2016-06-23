@@ -7,11 +7,13 @@ cvController.controller('cvCtrl', function($scope, GlobalService, $localStorage)
   if (!$localStorage.cartObj) {
     $localStorage.cartObj = {};
   }
-  console.log($localStorage.cartObj)
+  console.log($localStorage.cartObj);
   
-  $scope.itemsInCart = 0;
+  
   $scope.allGoods = ($localStorage.cartObj.allGoods) ? $localStorage.cartObj.allGoods : [];
+  $scope.itemsInCart = ($localStorage.cartObj.itemsInCart) ? $localStorage.cartObj.itemsInCart : 0;
   $scope.grandSum = ($localStorage.cartObj.grandSum) ? $localStorage.cartObj.grandSum : 0;
+  
 
   // calling API for getting products
   $scope.getProductDetails = function() {
@@ -34,7 +36,7 @@ cvController.controller('cvCtrl', function($scope, GlobalService, $localStorage)
     }); 
     $scope.grandSum = ($localStorage.cartObj.grandSum) ? $localStorage.cartObj.grandSum : $scope.grandTotal();
     $localStorage.cartObj.grandSum = $scope.grandSum;
-    //$localStorage.cartObj.itemsInCart = $scope.itemsInCart;
+    $localStorage.cartObj.itemsInCart = $scope.itemsInCart;
     $localStorage.cartObj.allGoods = $scope.allGoods;
   };
 
@@ -48,7 +50,7 @@ cvController.controller('cvCtrl', function($scope, GlobalService, $localStorage)
     found[0].total_amt = found[0].quantity * product.price;
     $scope.grandSum = $scope.grandTotal();
     $localStorage.cartObj.grandSum = $scope.grandSum;
-    //$localStorage.cartObj.itemsInCart = $scope.itemsInCart;
+    $localStorage.cartObj.itemsInCart = $scope.itemsInCart;
     $localStorage.cartObj.allGoods = $scope.allGoods;
   };
 
@@ -63,7 +65,7 @@ cvController.controller('cvCtrl', function($scope, GlobalService, $localStorage)
       found[0].total_amt = found[0].quantity * product.price;
       $scope.grandSum = $scope.grandTotal();
       $localStorage.cartObj.grandSum = $scope.grandSum;
-      //$localStorage.cartObj.itemsInCart = $scope.itemsInCart;
+      $localStorage.cartObj.itemsInCart = $scope.itemsInCart;
       $localStorage.cartObj.allGoods = $scope.allGoods;
     }
      
@@ -88,6 +90,16 @@ cvController.controller('cvCtrl', function($scope, GlobalService, $localStorage)
   $scope.removeCartItem = function(obj) {
     $scope.allGoods = ($scope.allGoods).filter(function(item) { return item.name !== obj.name; });
     $localStorage.cartObj.allGoods = $scope.allGoods;
+    $scope.grandSum = $scope.grandTotal();
+    $scope.itemsInCart -= obj.quantity;
+    $localStorage.cartObj.itemsInCart = $scope.itemsInCart;
+
+    if ($scope.allGoods.length === 0) {
+      $scope.itemsInCart = 0;
+      $localStorage.cartObj = {};
+
+      $scope.grandSum = 0;
+    } 
   };
 
   $scope.getProductDetails();
