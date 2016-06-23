@@ -4,11 +4,7 @@ cvDirectives.directive('cvDir', function() {
   return {
     restrict: 'A',
     link: function(scope, elem, attrs) {
-      console.log("Directive initiated");
-
-      scope.$on('hidecartbtn', function() {
-        $(this).hide();
-      })
+      console.log("Nothing here for now!!");
     }
   }
 });

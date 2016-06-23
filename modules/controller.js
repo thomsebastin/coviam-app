@@ -9,7 +9,7 @@ cvController.controller('cvCtrl', function($scope, GlobalService, $localStorage)
   }
   console.log($localStorage.cartObj);
   
-  
+  // Use localstorage value if they were saved earlier 
   $scope.allGoods = ($localStorage.cartObj.allGoods) ? $localStorage.cartObj.allGoods : [];
   $scope.itemsInCart = ($localStorage.cartObj.itemsInCart) ? $localStorage.cartObj.itemsInCart : 0;
   $scope.grandSum = ($localStorage.cartObj.grandSum) ? $localStorage.cartObj.grandSum : 0;
@@ -34,7 +34,10 @@ cvController.controller('cvCtrl', function($scope, GlobalService, $localStorage)
       quantity: product.totalSelectedItems,
       total_amt: product.totalSelectedItems * product.price
     }); 
+
     $scope.grandSum = ($localStorage.cartObj.grandSum) ? $localStorage.cartObj.grandSum : $scope.grandTotal();
+
+    // updating localStorage on add
     $localStorage.cartObj.grandSum = $scope.grandSum;
     $localStorage.cartObj.itemsInCart = $scope.itemsInCart;
     $localStorage.cartObj.allGoods = $scope.allGoods;
@@ -48,7 +51,9 @@ cvController.controller('cvCtrl', function($scope, GlobalService, $localStorage)
     var found = ($scope.allGoods).filter(function(item) { return item.name === product.brand_name; });
     found[0].quantity += 1;
     found[0].total_amt = found[0].quantity * product.price;
+
     $scope.grandSum = $scope.grandTotal();
+    
     $localStorage.cartObj.grandSum = $scope.grandSum;
     $localStorage.cartObj.itemsInCart = $scope.itemsInCart;
     $localStorage.cartObj.allGoods = $scope.allGoods;
@@ -63,12 +68,15 @@ cvController.controller('cvCtrl', function($scope, GlobalService, $localStorage)
       var found = ($scope.allGoods).filter(function(item) { return item.name === product.brand_name; });
       found[0].quantity -= 1;
       found[0].total_amt = found[0].quantity * product.price;
+
       $scope.grandSum = $scope.grandTotal();
+      
       $localStorage.cartObj.grandSum = $scope.grandSum;
       $localStorage.cartObj.itemsInCart = $scope.itemsInCart;
       $localStorage.cartObj.allGoods = $scope.allGoods;
     }
      
+    // This section is for hiding the 'add-to-cart' btn
     if (product.totalSelectedItems === 0) {
       product.isHidden = false;
       $scope.allGoods = ($scope.allGoods).filter(function(item) { return item.name !== product.brand_name; });
@@ -90,7 +98,10 @@ cvController.controller('cvCtrl', function($scope, GlobalService, $localStorage)
   $scope.removeCartItem = function(obj) {
     $scope.allGoods = ($scope.allGoods).filter(function(item) { return item.name !== obj.name; });
     $localStorage.cartObj.allGoods = $scope.allGoods;
+
     $scope.grandSum = $scope.grandTotal();
+    $localStorage.cartObj.grandSum = $scope.grandSum;
+    
     $scope.itemsInCart -= obj.quantity;
     $localStorage.cartObj.itemsInCart = $scope.itemsInCart;
 
@@ -102,5 +113,6 @@ cvController.controller('cvCtrl', function($scope, GlobalService, $localStorage)
     } 
   };
 
+  // Call the API from services
   $scope.getProductDetails();
 });
