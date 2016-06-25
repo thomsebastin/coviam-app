@@ -1,5 +1,5 @@
 # coviam-app
-A simple e-commerce page as a part of an interview given to Coviam
+A simple e-commerce page just for practicing Angular.js (_Alpha_) 
 
 # Installation:
 Run:
